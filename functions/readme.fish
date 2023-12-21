@@ -1,3 +1,7 @@
 function readme
-	$EDITOR ./README.md
+    if test (which lvim)
+        lvim ./README.md
+    else
+        $EDITOR ./README.md
+    end
 end
