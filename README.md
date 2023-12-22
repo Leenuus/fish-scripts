@@ -20,3 +20,4 @@ Some useful fish scripts
 - [quick edit `.gitignore` file](./functions/ignore.fish)
 - [quick edit a script](./functions/tt.fish)
 - [set proxy server](./proxy.fish)
+- [test a program, with some reminder text before it](./functions/report.fish)
