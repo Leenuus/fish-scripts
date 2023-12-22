@@ -5,3 +5,5 @@ function readme
         $EDITOR ./README.md
     end
 end
+
+abbr -a me readme
