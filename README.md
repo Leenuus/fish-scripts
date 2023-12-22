@@ -18,4 +18,5 @@ Some useful fish scripts
 - [quick edit common used configurations](./functions/config.fish)
 - [quick edit README](./functions/readme.fish)
 - [quick edit `.gitignore` file](./functions/ignore.fish)
+- [quick edit a script](./functions/tt.fish)
 - [set proxy server](./proxy.fish)
