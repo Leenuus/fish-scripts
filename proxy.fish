@@ -14,14 +14,15 @@ end
 function setproxy
     set options (fish_opt -s a -l address -r)
     set options $options (fish_opt -s p -l port -r)
+    set options $options (fish_opt -s V -l verbose)
     argparse $options -- $argv
     if test -n "$_flag_address"
-        set $PROXY_SERVER $_flag_address
+        set PROXY_SERVER $_flag_address
     else
         set -gx PROXY_SERVER "127.0.0.1"
     end
     if test -n "$_flag_port"
-        set $PROXY_PORT $_flag_port
+        set PROXY_PORT $_flag_port
     else
         set -gx PROXY_PORT 7890
     end
@@ -32,11 +33,12 @@ function setproxy
     set -gx all_proxy "socks5://$PROXY_SERVER:$PROXY_PORT"
     set -gx ALL_PROXY "socks5://$PROXY_SERVER:$PROXY_PORT"
 
-    set_color red
-    echo proxy set!
-    set_color normal
-
-    getproxy
+    # default: verbose
+    if test -z "$_flag_V"
+        set_color red
+        echo proxy set!
+        set_color normal
+    end
 end
 
 
